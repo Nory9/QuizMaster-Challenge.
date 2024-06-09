@@ -15,8 +15,8 @@ namespace quizmaster
             string[] answers = { "B", "A", "A", "A", "A", "D", "D", "D", "A", "B" };
             int count = 0,i=0;
             Console.WriteLine("Wellcome to QuizMaster\n this quiz is about C# basics it will have 10 questions so get ready and let get started!");
-            Console.WriteLine("but before we start please make sure to enter A/a ,B/b ,C/c or D/d as an answer\n\n");
-            while (i != 9) {
+            Console.WriteLine("but before we start please make sure to enter A/a ,B/b ,C/c or D/d as an answer you have 10 seconds per question\n\n");
+            while (i <= 9) {
                 Stopwatch stopwatch = Stopwatch.StartNew();
                 string ans = null;
                 Console.WriteLine(questions[i]);
@@ -31,20 +31,36 @@ namespace quizmaster
                 stopwatch.Stop();
                 if (ans == null)
                 {
-                    Console.WriteLine("Time's up! Moving to the next question.\n");
+                    Console.WriteLine("\nTime's up! Moving to the next question.\n");
                     i++;
                     continue;
                 }
                 if (ans == answers[i] || ans.ToUpper() == answers[i])
                 {
                     count++;
-                    Console.WriteLine("Good Job you've got this right!");
+                    Console.WriteLine("Good Job you've got this right!\n");
 
                 }
                 else if (ans != "A" && ans != "B" && ans != "C" && ans != "D" && ans != "a" && ans != "b" && ans != "c" && ans != "d") { 
                 Console.WriteLine("you entered a not suppoted format! please try again making sure your anwser is A/a B/b C/c D/d \n ");
+                    string a = null;
+                    Stopwatch stopwatch2 = Stopwatch.StartNew();
                     Console.WriteLine(questions[i]);
-                    string a = Console.ReadLine();
+                    while (stopwatch2.ElapsedMilliseconds < timeLimit && a == null)
+                    {
+                        if (Console.KeyAvailable)
+                        {
+                            a = Console.ReadLine();
+                        }
+                    }
+
+                    stopwatch2.Stop();
+                    if (a== null)
+                    {
+                        Console.WriteLine("Time's up! Moving to the next question.\n");
+                        i++;
+                        continue;
+                    }
                     if (a == answers[i] || a.ToUpper() == answers[i])
                     {
                         count++;
@@ -64,8 +80,25 @@ namespace quizmaster
                
                 else {
                     Console.WriteLine("your answer is wrong :( but dont worry you have one more shoot! lets try again\n");
+                    string bb = null;
+                    Stopwatch stopwatch3 = Stopwatch.StartNew();
+                   
                     Console.WriteLine(questions[i]);
-                    string bb = Console.ReadLine();
+                    while (stopwatch3.ElapsedMilliseconds < timeLimit && bb == null)
+                    {
+                        if (Console.KeyAvailable)
+                        {
+                            bb = Console.ReadLine();
+                        }
+                    }
+
+                    stopwatch3.Stop();
+                    if (bb == null)
+                    {
+                        Console.WriteLine("Time's up! Moving to the next question.\n");
+                        i++;
+                        continue;
+                    }
                     if (bb == answers[i] || bb.ToUpper() == answers[i])
                     {
                         count++;
