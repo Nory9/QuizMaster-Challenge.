@@ -2,7 +2,7 @@
 
 ## Purpose of the Program
 
-QuizMaster is a text-based quiz application designed to test users' knowledge of C# basics. Users are presented with a series of questions, and their responses are timed to ensure quick thinking and recall.
+QuizMaster is a text-based quiz application (Console app) designed to test users' knowledge of C# basics. Users are presented 10 questions, and their responses are timed to ensure quick thinking and recall.
 
 ## Instructions on How to Run the Program
 
