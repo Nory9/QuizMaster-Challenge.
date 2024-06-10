@@ -17,7 +17,7 @@ namespace quizmaster
             Console.WriteLine("Wellcome to QuizMaster\n this quiz is about C# basics it will have 10 questions so get ready and let get started!");
             Console.WriteLine("but before we start please make sure to enter A/a ,B/b ,C/c or D/d as an answer you have 10 seconds per question\n\n");
             while (i <= 9) {
-                Stopwatch stopwatch = Stopwatch.StartNew();
+                Stopwatch stopwatch = Stopwatch.StartNew(); //
                 string ans = null;
                 Console.WriteLine(questions[i]);
                 while (stopwatch.ElapsedMilliseconds < timeLimit && ans == null)

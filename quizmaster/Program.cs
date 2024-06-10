@@ -13,7 +13,7 @@
                 Console.WriteLine("Something went wrong please try again!");
             }
             finally {
-                Console.WriteLine("thank you for using and supporting QuizMaster :)");
+                Console.WriteLine("\nthank you for using and supporting QuizMaster :)");
             }
           
         }
